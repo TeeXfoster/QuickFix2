@@ -1,70 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickFix - Services</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickFix - Services | Fast Repairs</title>
+  <meta name="description" content="QuickFix services for electricians, gardeners, mechanics, and extras. Use live search to filter services and open details in a lightbox + accordions." />
+  <meta name="keywords" content="QuickFix, services, electricians, gardeners, mechanics, plumbing, phone repairs, handyman, South Africa" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <h1>🚀 QuickFix - Our Services</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="booking.html">Book Now</a></li>
-        </ul>
-    </nav>
-    <main>
-        <section id="services-overview">
-            <h2>Quick and Reliable Fixes</h2>
-            <p>We handle plumbing, electrical, phone repairs, home maintenance, and more. Fast booking, expert pros.</p>
-            <ul>
-                <li>Plumbing leaks &amp; clogs</li>
-                <li>Electrical wiring &amp; outlets</li>
-                <li>Phone &amp; gadget repairs</li>
-                <li>Home fixes &amp; installations</li>
-            </ul>
-        </section>
-        <section id="electricians">
-            <h2>We offer electricians</h2>
-            <figure>
-                <img src="images/Electricians.jpg" alt="Professional electricians fixing wiring" width="400" height="300">
-                <figcaption>Expert electricians for all your wiring, lighting, and power needs.</figcaption>
-            </figure>
-            <p>From faulty outlets to full rewiring, our certified electricians arrive quickly.</p>
-        </section>
-        <section id="gardeners">
-            <h2>Gardeners</h2>
-            <figure>
-                <img src="images/Gardeners.jpg" alt="Gardeners trimming and maintaining garden" width="400" height="300">
-                <figcaption>Skilled gardeners to keep your yard perfect.</figcaption>
-            </figure>
-            <p>Lawn mowing, trimming, planting - seasonal garden care.</p>
-        </section>
-        <section id="mechanics">
-            <h2>Mechanics</h2>
-            <figure>
-                <img src="images/Mechanics.jpg" alt="Mechanics repairing vehicle" width="400" height="300">
-                <figcaption>Reliable mechanics for car and small engine repairs.</figcaption>
-            </figure>
-            <p>Quick fixes for brakes, engines, tires, and diagnostics.</p>
-        </section>
-        <section id="extras">
-            <h2>And Extras</h2>
-            <figure>
-                <img src="images/Extras.jpg" alt="Various extra services" width="400" height="300">
-                <figcaption>Plumbing, phone repairs, and more specialized services.</figcaption>
-            </figure>
-            <p>Custom extras like plumbing, appliance repair, and home handyman tasks.</p>
-        </section>
-    </main>
-    <footer>
-        <p>&amp;copy; 2026 QuickFix. | Phone: 072-072-3595 | Email: tshedzafoster@gmail.com</p>
-    </footer>
+  <header>
+    <h1>🚀 QuickFix - Our Services</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="services-overview">
+      <h2>Quick and Reliable Fixes</h2>
+      <p>
+        We handle plumbing, electrical, phone repairs, home maintenance and more.
+        Search and browse service categories below.
+      </p>
+      <ul>
+        <li>Plumbing leaks &amp; clogs</li>
+        <li>Electrical wiring &amp; outlets</li>
+        <li>Phone &amp; gadget repairs</li>
+        <li>Home fixes &amp; installations</li>
+      </ul>
+
+      <p>
+        Need a personalised quote? Use
+        <a href="enquiry.html">Service Enquiry</a> for availability + estimated cost.
+      </p>
+
+      <div id="service-search" class="service-search">
+        <label for="service-search-input">Search services</label>
+        <input
+          type="search"
+          id="service-search-input"
+          data-service-search
+          placeholder="Type to filter (e.g. electrician, garden, mechanic)" 
+          aria-describedby="search-results"
+        />
+        <p id="search-results" data-search-results aria-live="polite"></p>
+      </div>
+
+      <h3>Service categories</h3>
+    </section>
+
+    <!-- Dynamic list used for live filtering -->
+    <section id="services-list" aria-label="Browse and search services">
+      <div data-service-list aria-label="Services" role="list">
+        <article
+          data-service-item
+          data-service="electricians"
+          role="listitem"
+          aria-label="Electricians"
+          class="service-item"
+        >
+          <h2>Electricians</h2>
+          <figure>
+            <a
+              href="images/Electricians.jpg"
+              data-lightbox-thumb
+              data-lightbox-src="images/Electricians.jpg"
+              data-lightbox-caption="Electricians fixing wiring"
+            >
+              <img src="images/Electricians.jpg" alt="Electricians fixing wiring" width="400" height="300" />
+            </a>
+            <figcaption>From faulty outlets to rewiring.</figcaption>
+          </figure>
+          <p>Expert help for lighting, power issues and wiring safety.</p>
+          <button type="button" data-open-modal="electricians-modal">See what’s included</button>
+        </article>
+
+        <article
+          data-service-item
+          data-service="gardeners"
+          role="listitem"
+          aria-label="Gardeners"
+          class="service-item"
+        >
+          <h2>Gardeners</h2>
+          <figure>
+            <a
+              href="images/Gardeners.jpg"
+              data-lightbox-thumb
+              data-lightbox-src="images/Gardeners.jpg"
+              data-lightbox-caption="Gardeners trimming and maintaining garden"
+            >
+              <img src="images/Gardeners.jpg" alt="Gardeners trimming and maintaining garden" width="400" height="300" />
+            </a>
+            <figcaption>Seasonal garden care.</figcaption>
+          </figure>
+          <p>Lawn mowing, trimming, planting and cleanups.</p>
+          <button type="button" data-open-modal="gardeners-modal">See what’s included</button>
+        </article>
+
+        <article
+          data-service-item
+          data-service="mechanics"
+          role="listitem"
+          aria-label="Mechanics"
+          class="service-item"
+        >
+          <h2>Mechanics</h2>
+          <figure>
+            <a
+              href="images/Mechanics.jpg"
+              data-lightbox-thumb
+              data-lightbox-src="images/Mechanics.jpg"
+              data-lightbox-caption="Mechanics repairing vehicle"
+            >
+              <img src="images/Mechanics.jpg" alt="Mechanics repairing vehicle" width="400" height="300" />
+            </a>
+            <figcaption>Repairs and diagnostics.</figcaption>
+          </figure>
+          <p>Brakes, engines, tyres and performance checks.</p>
+          <button type="button" data-open-modal="mechanics-modal">See what’s included</button>
+        </article>
+
+        <article
+          data-service-item
+          data-service="extras"
+          role="listitem"
+          aria-label="Extras"
+          class="service-item"
+        >
+          <h2>And Extras</h2>
+          <figure>
+            <a
+              href="images/Extras.jpg"
+              data-lightbox-thumb
+              data-lightbox-src="images/Extras.jpg"
+              data-lightbox-caption="Extras and handyman services"
+            >
+              <img src="images/Extras.jpg" alt="Extra services and handyman tasks" width="400" height="300" />
+            </a>
+            <figcaption>Handyman tasks and support.</figcaption>
+          </figure>
+          <p>Plumbing support, phone repairs and home fixes.</p>
+          <button type="button" data-open-modal="extras-modal">See what’s included</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Modals with accordions -->
+    <div class="modal" id="electricians-modal" data-modal aria-hidden="true">
+      <div class="modal__backdrop" aria-hidden="true"></div>
+      <div class="modal__content" role="dialog" aria-modal="true" aria-label="Electricians details">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close">✕</button>
+        <h2>Electricians - Details</h2>
+        <p>We help with wiring, lighting installation, troubleshooting and safety checks.</p>
+
+        <div data-accordion>
+          <div data-accordion-item>
+            <button data-accordion-toggle type="button">Pricing approach</button>
+            <div data-accordion-panel>
+              <p>Estimates depend on complexity and parts. Use <a href="enquiry.html">Service Enquiry</a> for a quick estimate.</p>
+            </div>
+          </div>
+          <div data-accordion-item>
+            <button data-accordion-toggle type="button">Response time</button>
+            <div data-accordion-panel>
+              <p>Typical response: same day to 24 hours (availability varies by area).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="gardeners-modal" data-modal aria-hidden="true">
+      <div class="modal__backdrop" aria-hidden="true"></div>
+      <div class="modal__content" role="dialog" aria-modal="true" aria-label="Gardeners details">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close">✕</button>
+        <h2>Gardeners - Details</h2>
+        <p>We manage lawns, seasonal trimming, planting and garden cleanups.</p>
+
+        <div data-accordion>
+          <div data-accordion-item>
+            <button data-accordion-toggle type="button">Included services</button>
+            <div data-accordion-panel>
+              <ul>
+                <li>Lawn mowing &amp; trimming</li>
+                <li>Seasonal planting</li>
+                <li>Garden cleanups</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="mechanics-modal" data-modal aria-hidden="true">
+      <div class="modal__backdrop" aria-hidden="true"></div>
+      <div class="modal__content" role="dialog" aria-modal="true" aria-label="Mechanics details">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close">✕</button>
+        <h2>Mechanics - Details</h2>
+        <p>Diagnostics, repairs and maintenance for cars and small engines.</p>
+
+        <div data-accordion>
+          <div data-accordion-item>
+            <button data-accordion-toggle type="button">What we fix</button>
+            <div data-accordion-panel>
+              <ul>
+                <li>Brakes, tyres &amp; diagnostics</li>
+                <li>Engine and performance checks</li>
+                <li>General maintenance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="extras-modal" data-modal aria-hidden="true">
+      <div class="modal__backdrop" aria-hidden="true"></div>
+      <div class="modal__content" role="dialog" aria-modal="true" aria-label="Extras details">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close">✕</button>
+        <h2>Extras - Details</h2>
+        <p>Handyman tasks, plumbing support and phone repairs.</p>
+
+        <div data-accordion>
+          <div data-accordion-item>
+            <button data-accordion-toggle type="button">Available help</button>
+            <div data-accordion-panel>
+              <ul>
+                <li>Plumbing assistance</li>
+                <li>Phone repairs</li>
+                <li>Home fixes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- site-wide lightbox host -->
+  <div id="quickfix-lightbox" class="quickfix-lightbox" aria-hidden="true">
+    <div class="quickfix-lightbox__backdrop" aria-hidden="true"></div>
+    <div class="quickfix-lightbox__content" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="quickfix-lightbox__close" type="button" data-close-lightbox aria-label="Close image preview">✕</button>
+      <img id="quickfix-lightbox-img" src="" alt="" />
+      <p id="quickfix-lightbox-caption" class="quickfix-lightbox__caption"></p>
+    </div>
+  </div>
+
+  <script src="js/quickfix.js" defer></script>
+
+  <footer>
+    <p>&copy; 2026 QuickFix. Quick help for all your needs. | Phone: 072-072-3596 | Email: <a href="mailto:tshedzafoster@gmail.com">tshedzafoster@gmail.com</a></p>
+  </footer>
 </body>
 </html>
+
