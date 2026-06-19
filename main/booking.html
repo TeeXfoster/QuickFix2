@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickFix - Book Now | Fast Repairs</title>
+  <meta name="description" content="Book a QuickFix service. Client-side confirmation and interactive accordions/tabs for a smoother booking experience." />
+  <meta name="keywords" content="QuickFix booking, book services, electricians, gardeners, mechanics, plumbing, phone repairs" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🚀 QuickFix - Book Your Fix Now</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="booking-intro">
+      <h2>Book Help in Minutes</h2>
+      <p>Fill the form below. We'll confirm and send a pro ASAP!</p>
+    </section>
+
+    <section id="booking-form">
+      <h2>Booking Details</h2>
+
+      <div data-accordion aria-label="Booking steps">
+        <div data-accordion-item>
+          <button data-accordion-toggle type="button">1) Choose a service</button>
+          <div data-accordion-panel>
+            <p>Select the service you need.</p>
+          </div>
+        </div>
+        <div data-accordion-item>
+          <button data-accordion-toggle type="button">2) Pick a date</button>
+          <div data-accordion-panel>
+            <p>Choose a preferred date for the visit.</p>
+          </div>
+        </div>
+        <div data-accordion-item>
+          <button data-accordion-toggle type="button">3) Share details</button>
+          <div data-accordion-panel>
+            <p>Describe the issue so we can assign the right provider.</p>
+          </div>
+        </div>
+      </div>
+
+      <form action="#" method="post" data-booking-form>
+        <p>
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" required />
+        </p>
+
+        <p>
+          <label for="service">Service Needed</label>
+          <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="electricians">Electricians</option>
+            <option value="gardeners">Gardeners</option>
+            <option value="mechanics">Mechanics</option>
+            <option value="extras">Plumbing/Phone Repairs/Extras</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required />
+        </p>
+
+        <p>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required placeholder="e.g. 0712345678" />
+        </p>
+
+        <p>
+          <label for="details">Problem Details</label>
+          <textarea id="details" name="details" rows="6" placeholder="Describe the issue..." required></textarea>
+        </p>
+
+        <button type="submit">Submit Booking</button>
+      </form>
+
+      <p class="mt-lg">
+        Want a quick quote first?
+        <a href="enquiry.html">Use Service Enquiry</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 QuickFix. Quick help for all your needs. | Phone: 072-072-3596 | Email: <a href="mailto:tshedzafoster@gmail.com">tshedzafoster@gmail.com</a></p>
+  </footer>
+
+  <div class="modal" id="booking-confirm-modal" data-modal aria-hidden="true">
+    <div class="modal__backdrop" aria-hidden="true"></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-label="Booking confirmation">
+      <button class="modal__close" type="button" data-close-modal aria-label="Close">✕</button>
+      <h2>Booking received</h2>
+      <p id="booking-confirm-message">Thank you! We will contact you soon.</p>
+    </div>
+  </div>
+
+  <script src="js/quickfix.js" defer></script>
+</body>
+</html>
+

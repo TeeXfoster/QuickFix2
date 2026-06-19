@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickFix - Home | Fast Repairs & Maintenance</title>
+    <meta name="description" content="QuickFix connects you with trusted repair and maintenance providers for plumbing, electrical work, phone repairs, gardening, mechanics and more. Book instantly." />
+    <meta name="keywords" content="QuickFix, home repairs, maintenance, electricians, plumbers, phone repairs, gardeners, mechanics, South Africa" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+<h1>QuickFix - Fast Solutions for Your Everyday Problems</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="quick-tabs" data-tabs aria-label="Quick actions">
+            <div role="tablist" aria-label="Quick tabs">
+                <button type="button" role="tab" aria-selected="true" class="quickfix-tab" data-tab-button="quick-panel-1">Book</button>
+                <button type="button" role="tab" aria-selected="false" class="quickfix-tab" data-tab-button="quick-panel-2">Enquire</button>
+                <button type="button" role="tab" aria-selected="false" class="quickfix-tab" data-tab-button="quick-panel-3">Help</button>
+            </div>
+            <div role="tabpanel" data-tab-panel="quick-panel-1" id="quick-panel-1" data-tab-content>
+                <p>Need an expert fast? Go to <a href="booking.html">Book Now</a>.</p>
+            </div>
+            <div role="tabpanel" data-tab-panel="quick-panel-2" id="quick-panel-2" data-tab-content hidden>
+                <p>Prefer to estimate first? Use <a href="enquiry.html">Service Enquiry</a>.</p>
+            </div>
+            <div role="tabpanel" data-tab-panel="quick-panel-3" id="quick-panel-3" data-tab-content hidden>
+                <p>Questions? Contact us at <a href="contact.html">Contact</a>.</p>
+            </div>
+        </section>
+        <section id="hero">
+            <h2>Need Quick Help? We're Here!</h2>
+            <p>QuickFix connects you with trusted professionals for plumbing, electrical issues, phone repairs, home fixes, and more. Book instantly!</p>
+        </section>
+        <section id="services-teaser">
+            <h2>Our Top Services</h2>
+            <figure>
+                <img src="images/Electricians.jpg" alt="Electricians at work" width="200" height="150">
+                <figcaption><a href="services.html#electricians">Electricians</a></figcaption>
+            </figure>
+            <figure>
+                <img src="images/Gardeners.jpg" alt="Gardeners maintaining lawn" width="200" height="150">
+                <figcaption><a href="services.html#gardeners">Gardeners</a></figcaption>
+            </figure>
+            <figure>
+                <img src="images/Mechanics.jpg" alt="Mechanics repairing" width="200" height="150">
+                <figcaption><a href="services.html#mechanics">Mechanics</a></figcaption>
+            </figure>
+            <figure>
+                <img src="images/Extras.jpg" alt="Extra services" width="200" height="150">
+                <figcaption><a href="services.html#extras">Extras</a></figcaption>
+            </figure>
+        </section>
+        <section id="gallery" aria-label="QuickFix image gallery">
+            <h2>Gallery</h2>
+            <p>Explore service moments. Click an image to open the lightbox.</p>
 
+            <div data-lightbox-gallery aria-label="Service gallery">
+                <figure style="display:inline-block; margin: 0 0.8rem 0.8rem 0; max-width: 240px; cursor: pointer;">
+                    <a href="images/Electricians.jpg" data-lightbox-thumb data-lightbox-src="images/Electricians.jpg" data-lightbox-caption="Electricians fixing wiring">
+                        <img src="images/Electricians.jpg" alt="Electricians at work" width="240" height="160" />
+                    </a>
+                </figure>
+                <figure style="display:inline-block; margin: 0 0.8rem 0.8rem 0; max-width: 240px; cursor: pointer;">
+                    <a href="images/Gardeners.jpg" data-lightbox-thumb data-lightbox-src="images/Gardeners.jpg" data-lightbox-caption="Gardeners trimming and maintaining garden">
+                        <img src="images/Gardeners.jpg" alt="Gardeners trimming and maintaining garden" width="240" height="160" />
+                    </a>
+                </figure>
+                <figure style="display:inline-block; margin: 0 0.8rem 0.8rem 0; max-width: 240px; cursor: pointer;">
+                    <a href="images/Mechanics.jpg" data-lightbox-thumb data-lightbox-src="images/Mechanics.jpg" data-lightbox-caption="Mechanics repairing vehicles">
+                        <img src="images/Mechanics.jpg" alt="Mechanics repairing vehicle" width="240" height="160" />
+                    </a>
+                </figure>
+                <figure style="display:inline-block; margin: 0 0.8rem 0.8rem 0; max-width: 240px; cursor: pointer;">
+                    <a href="images/Extras.jpg" data-lightbox-thumb data-lightbox-src="images/Extras.jpg" data-lightbox-caption="Extras and handyman services">
+                        <img src="images/Extras.jpg" alt="Extra services" width="240" height="160" />
+                    </a>
+                </figure>
+            </div>
+        </section>
+
+        <section id="cta">
+            <h2>Ready to Fix It?</h2>
+            <p><a href="booking.html">Book Now</a> or <a href="services.html">Explore Services</a></p>
+        </section>
+    </main>
+    <!-- site-wide lightbox + modal host (footer moved below) -->
+
+
+    <!-- site-wide lightbox + modal host -->
+    <div id="quickfix-lightbox" class="quickfix-lightbox" aria-hidden="true">
+        <div class="quickfix-lightbox__backdrop" aria-hidden="true"></div>
+        <div class="quickfix-lightbox__content" role="dialog" aria-modal="true" aria-label="Image preview">
+            <button class="quickfix-lightbox__close" type="button" data-close-lightbox aria-label="Close image preview">✕</button>
+            <img id="quickfix-lightbox-img" src="" alt="" />
+            <p id="quickfix-lightbox-caption" class="quickfix-lightbox__caption"></p>
+        </div>
+    </div>
+
+    <div class="modal" id="quickfix-modal" data-modal aria-hidden="true">
+        <div class="modal__backdrop" aria-hidden="true"></div>
+        <div class="modal__content" role="dialog" aria-modal="true" aria-label="QuickFix modal">
+            <button class="modal__close" type="button" data-close-modal aria-label="Close">✕</button>
+            <h2>QuickFix</h2>
+            <p class="modal__message"></p>
+        </div>
+    </div>
+
+    <script src="js/quickfix.js" defer></script>
+    <footer>
+        <p>&copy; 2026 QuickFix. Quick help for all your needs. | Phone: 072-072-3596 | Email: <a href="mailto:tshedzafoster@gmail.com">tshedzafoster@gmail.com</a></p>
+</footer>
+</body>
+</html>

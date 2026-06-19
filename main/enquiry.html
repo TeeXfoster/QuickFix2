@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickFix - Service Enquiry</title>
+  <meta name="description" content="Send a QuickFix service enquiry and get a quick estimate of cost and availability for electricians, gardeners, mechanics, plumbing and phone repairs." />
+  <meta name="keywords" content="QuickFix, service enquiry, electricians, gardeners, mechanics, plumbing, phone repairs, South Africa" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🚀 QuickFix - Service Enquiry</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="enquiry-intro">
+      <h2>Get availability + an estimated cost</h2>
+      <p>Fill the form and receive a quick response (client-side demo — no backend required).</p>
+    </section>
+
+    <section id="enquiry-form-section">
+      <h2>Enquiry Form</h2>
+
+      <form data-enquiry-form>
+        <p>
+          <label for="enq-name">Full Name</label>
+          <input type="text" id="enq-name" name="name" autocomplete="name" required />
+          <span class="field-error" data-error-for="name" role="alert" style="display:none"></span>
+        </p>
+
+        <p>
+          <label for="enq-phone">Phone Number</label>
+          <input type="tel" id="enq-phone" name="phone" placeholder="e.g. 0712345678" autocomplete="tel" required />
+          <span class="field-error" data-error-for="phone" role="alert" style="display:none"></span>
+        </p>
+
+        <p>
+          <label for="enq-email">Email Address</label>
+          <input type="email" id="enq-email" name="email" autocomplete="email" required />
+          <span class="field-error" data-error-for="email" role="alert" style="display:none"></span>
+        </p>
+
+        <p>
+          <label for="enq-service">Service</label>
+          <select id="enq-service" name="service" required>
+            <option value="electricians">Electricians</option>
+            <option value="gardeners">Gardeners</option>
+            <option value="mechanics">Mechanics</option>
+            <option value="plumbing">Plumbing</option>
+            <option value="phone">Phone Repairs</option>
+            <option value="extras">Extras (Handyman)</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="enq-details">What do you need help with?</label>
+          <textarea id="enq-details" name="details" rows="5" placeholder="Describe the problem..." required></textarea>
+          <span class="field-error" data-error-for="details" role="alert" style="display:none"></span>
+        </p>
+
+        <button type="submit">Send Enquiry</button>
+
+        <p class="enquiry-response" data-enquiry-response aria-live="polite" style="display:none"></p>
+      </form>
+    </section>
+
+    <section id="enquiry-next">
+      <h2>Next steps</h2>
+      <ul>
+        <li><a href="booking.html">Book a time</a> after your enquiry.</li>
+        <li>Need quick help now? Visit <a href="contact.html">Contact</a>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 QuickFix. Quick help for all your needs. | Phone: 072-072-3596 | Email: <a href="mailto:tshedzafoster@gmail.com">tshedzafoster@gmail.com</a></p>
+  </footer>
+
+  <!-- Lightbox (used on pages with gallery thumbnails) -->
+  <div id="quickfix-lightbox" class="quickfix-lightbox" aria-hidden="true">
+    <div class="quickfix-lightbox__backdrop" aria-hidden="true"></div>
+    <div class="quickfix-lightbox__content" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="quickfix-lightbox__close" type="button" data-close-lightbox aria-label="Close image preview">✕</button>
+      <img id="quickfix-lightbox-img" src="" alt="" />
+      <p id="quickfix-lightbox-caption" class="quickfix-lightbox__caption"></p>
+    </div>
+  </div>
+
+  <!-- Modal (optional site-wide modal) -->
+  <div class="modal" id="quickfix-modal" data-modal aria-hidden="true">
+    <div class="modal__backdrop" aria-hidden="true"></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-label="QuickFix modal">
+      <button class="modal__close" type="button" data-close-modal aria-label="Close">✕</button>
+      <h2>QuickFix</h2>
+      <p class="modal__message"></p>
+    </div>
+  </div>
+
+  <script src="js/quickfix.js" defer></script>
+</body>
+</html>
+
