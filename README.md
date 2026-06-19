@@ -149,3 +149,23 @@ Open `index.html` in a browser. No external dependencies.
   - Added robots/sitemap
   - Added SEO meta tags to all pages
 
+## Screenshots / Photos
+> Note: These screenshots use the existing project images in `images/`.
+
+### Service Gallery (Lightbox examples)
+- Electricians: `images/Electricians.jpg`
+- Gardeners: `images/Gardeners.jpg`
+- Mechanics: `images/Mechanics.jpg`
+- Extras: `images/Extras.jpg`
+
+### Quick visual preview
+- Electricians image:
+  - <img src="images/Electricians.jpg" alt="Electricians at work" width="220" />
+- Gardeners image:
+  - <img src="images/Gardeners.jpg" alt="Gardeners trimming and maintaining garden" width="220" />
+- Mechanics image:
+  - <img src="images/Mechanics.jpg" alt="Mechanics repairing vehicle" width="220" />
+- Extras image:
+  - <img src="images/Extras.jpg" alt="Extra services" width="220" />
+
+
